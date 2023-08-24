@@ -1,0 +1,57 @@
+main{
+    background-color: white;    
+}
+.main-menu{
+    width: 90%;
+    margin: 0 auto;
+}
+
+main .mainlogo{
+    width: 370px;
+    height: 290px;    
+    display: block;
+    margin: 0 auto;    
+}
+
+main .main-list{    
+    list-style-type: none;     
+    display: flex;
+    justify-content: space-around;    
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+ul .main-list{
+    border: 1px solid black;
+}
+ul .qna{
+    color: dimgray
+}
+
+ /* 전체상품~~상품리스트*/
+.product_title{
+    text-align: center;  
+    color: black;
+    font-weight: bold;
+    font-size: large;
+
+}
+ section, #product{
+    margin-top: 40px;
+    text-align: center;    
+    margin-left: 120px;
+}
+
+.row {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#selectButton{
+    background-color: rgb(247, 154, 73);
+    border-color: rgb(247, 154, 73);
+    font-weight: bold;
+}

@@ -1,0 +1,13 @@
+
+body{
+    background-color: rgb(247, 154, 73);
+    font-family: '맑은 고딕','돋움';
+    font-size: 12px;/* element 크기를 설정할때 rem 단위 기준 */
+}
+
+ul{
+    list-style-type: none;
+}
+
+
+
