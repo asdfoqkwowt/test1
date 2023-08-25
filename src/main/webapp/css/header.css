@@ -34,3 +34,10 @@
     font-weight: bold;
     color: white;    
   }
+  
+div .mainlogo{
+    width: 370px;
+    height: 290px;    
+    display: block;
+    margin: 0 auto;    
+}

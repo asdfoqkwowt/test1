@@ -20,6 +20,17 @@ public class MemberVO {
 		this.grade = grade;
 	}
 	
+	//회원가입용 생성자
+	public MemberVO(String id, String pwd, String name, int age, String email, String address, String phone) {
+		this.id = id;
+		this.pwd = pwd;
+		this.name = name;
+		this.age = age;
+		this.email = email;
+		this.address = address;
+		this.phone = phone;		
+	}	
+	
 	
 	//로그인용 생성자
 	public MemberVO(String id, String pwd, String grade) {

@@ -20,7 +20,7 @@ public class MemberDAO {
 		Connection conn=JDBCUtil.getConnection();
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		String sql="select name, grade from membertbl where id=? pwd=?";
+		String sql="select name, grade from membertbl where id=? and pwd=?";
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, id);
@@ -52,7 +52,7 @@ public class MemberDAO {
 		Connection conn=JDBCUtil.getConnection();
 		PreparedStatement pstmt=null;
 		String sql="insert into membertbl(id,pwd,name,age,address,email,phone) values"
-				+ "(?,?,?,?,?,null,?)";
+				+ "(?,?,?,?,?,?,?)";
 		try {			
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getId());
@@ -62,12 +62,7 @@ public class MemberDAO {
 			pstmt.setString(5, vo.getAddress());
 			pstmt.setString(6, vo.getEmail());
 			pstmt.setString(7, vo.getPhone());
-			result=pstmt.executeUpdate();			
-			if(result==1) {
-				// 로그인 페이지로 가야됨 로그인하는 해당 jsp 페이지로 이동ㄱㄱㄱ
-			} else {
-				// 다시 회원가입 하는 jsp 파일로 가기
-			}			
+			result=pstmt.executeUpdate();					
 		} catch (SQLException e) {			
 			e.printStackTrace();
 		} finally {
