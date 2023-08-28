@@ -50,23 +50,24 @@
 						<div class="text-end">
 							<button class="btn btn-light rounded-pill px-3" type="button"
 								onclick="location.href='member?cmd=login'" id="login"
-								name="login">로그인</button>
-							<button class="btn btn-light rounded-pill px-3" type="button"
+								name="login">로그인 및 회원가입</button>
+								<% %>
+						<!-- 	<button class="btn btn-light rounded-pill px-3" type="button"
 								onclick="location.href='member?cmd=signup'" id="join"
-								name="join">회원가입</button>
+								name="join">회원가입</button> -->
 						</div>
 					</c:when>
 					<c:otherwise>
 						<button type="button" id="logout" name="logout"
 							onclick="location.href='member?cmd=logout'"
-							class="btn btn-success">로그아웃</button>
+							class="btn btn-light rounded-pill px-3">로그아웃</button>
 					</c:otherwise>
 				</c:choose>
 			</div>
 		</div>
 	</header>
-	<div>
-		<a href="#"><img class="mainlogo" src="img/main_logo.jpg"></a>
+	<div id="logo">		
+		<a href="main"><img class="mainlogo" src="img/main_logo.jpg"></a>				
 	</div>
 </body>
 </html>

@@ -20,20 +20,18 @@ public class MemberService {
 	public String exec() {
 		String cmd = request.getParameter("cmd");
 		if (cmd.equals("login")) {
-			return LoginService();
-		} else if (cmd.equals("logout")) {
-			// 세션얻기
+			return loginservice();
+		} else if (cmd.equals("logout")) {			
 			HttpSession s = request.getSession();
-			// 세션 지우기
 			s.invalidate();
-			return path + "main.jsp";
+			return "main?cmd=main";
 		} else if (cmd.equals("signup")) {
-			return SignupService();
+			return signupservice();
 		}
 		return null;
 	}
 
-	private String LoginService() {
+	private String loginservice() {
 		String method = request.getMethod().toUpperCase();
 		if (method.equals("GET")) {
 			return path + "login.jsp";
@@ -54,7 +52,7 @@ public class MemberService {
 		}
 	}
 
-	private String SignupService() {
+	private String signupservice() {
 		String method = request.getMethod().toUpperCase();
 		if (method.equals("GET")) {
 			return path + "signup.jsp";

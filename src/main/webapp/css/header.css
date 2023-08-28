@@ -41,3 +41,6 @@ div .mainlogo{
     display: block;
     margin: 0 auto;    
 }
+#logo{
+	background-color:white;	
+}

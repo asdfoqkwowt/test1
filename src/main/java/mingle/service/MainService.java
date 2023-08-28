@@ -2,6 +2,7 @@ package mingle.service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 public class MainService {
@@ -18,11 +19,11 @@ public class MainService {
 		String cmd=request.getParameter("cmd");
 		String view=null;
 		if(cmd==null || cmd.equals("main")) 
-			return MainPageService();		
-		return null;
+			return mainpageservice();		
+		return null;		
 	}
 
-	private String MainPageService() {		
+	private String mainpageservice() {		
 		return path+"main.jsp";
 	}		
 	

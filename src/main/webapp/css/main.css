@@ -1,9 +1,12 @@
-main{
+
+body{
     background-color: white;    
 }
+
 .main-menu{
     width: 90%;
     margin: 0 auto;
+    background-color:white;
 }
 
 main .mainlogo{
