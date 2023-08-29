@@ -50,7 +50,7 @@ function doAjaxHtml(url, param, callback) {
     $.ajax({
         async    : true        // true(비동기통신), false(동기통신)
        ,type     : "POST"       // POST, GET
-       ,url      : url 			// 서블릿 매핑주소, 웹주소
+       ,url      : url 			// 서블릿 매핑주소
        ,dataType : "html"       // 전송받을 데이터의 타입[xml, html, script, json 등 지정 가능, 미지정시 자동 판단]
      //,timeout  : 30000        // 제한시간 지정
        ,cache    : false        // true, false

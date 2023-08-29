@@ -1,8 +1,13 @@
 package mingle.service;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.google.gson.JsonObject;
 
 import mingle.member.MemberDAO;
 import mingle.member.MemberVO;
@@ -17,7 +22,7 @@ public class MemberService {
 		response = resp;
 	}
 
-	public String exec() {
+	public String exec() throws IOException {
 		String cmd = request.getParameter("cmd");
 		if (cmd.equals("login")) {
 			return loginservice();
@@ -27,7 +32,9 @@ public class MemberService {
 			return "main?cmd=main";
 		} else if (cmd.equals("signup")) {
 			return signupservice();
-		}
+		} else if (cmd.equals("idCheck")) {
+			 MemberidcheckService();
+		} 
 		return null;
 	}
 
@@ -75,4 +82,25 @@ public class MemberService {
 		}
 		return null;
 	}
+	
+	
+	
+	//아이디 중복체크
+	private void MemberidcheckService() throws IOException {
+		String id = request.getParameter("id");
+		MemberDAO dao= MemberDAO.getInstance();
+		int result = dao.idCheck(id);
+		JsonObject ob = new JsonObject();
+		if (result == 0) {
+			ob.addProperty("message", "사용 가능한 아이디입니다.");
+		} else
+			ob.addProperty("message", "이미 존재하는 아이디입니다.");
+		ob.addProperty("result", result);
+		response.setContentType("application/json;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		out.print(ob);
+		out.flush();
+		out.close();
+	}
+	
 }

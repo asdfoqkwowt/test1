@@ -41,23 +41,25 @@ public class MemberDAO {
 		return vo;
 	}
 
-	public boolean idCheck(String id) {
+	public int idCheck(String id) {
+		int result=1;
 		Connection conn=JDBCUtil.getConnection();
 		PreparedStatement pstmt=null;
-		ResultSet rs=null;
-		boolean check=false;		
-		String sql="select id from membertbl where id=?";
+		ResultSet rs=null;			
+		String sql="select count(*) from membertbl where id=?";
 		try {
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			rs=pstmt.executeQuery();
-			if(rs.next()) check = true;
+			pstmt.setString(1, id);			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				result = rs.getInt(1);
+			}
 		} catch (SQLException e) {			
 			e.printStackTrace();
 		} finally {
 			JDBCUtil.close(conn, pstmt, rs);
-		}
-		return check;		
+		}		
+		return result;		
 		
 	}
 

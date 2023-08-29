@@ -76,11 +76,11 @@
     
     <div class="row" >
         <div class="col"><div class="card" style="width: 17rem;">
-            <a href="#"><img src="img/mainlogo.PNG" class="card-img-top" alt=""></a>
+            <a href="#"><img src="img/product/product-1.jpg" class="card-img-top" alt=""></a>
             <div class="card-body">
-              <h5 class="card-title">상품</h5>
-              <p class="card-text">준비중</p>
-              <a href="#" class="btn btn-primary" id="selectButton">보러가기</a>                     
+              <h5 class="card-title">현금챌린지 바인더</h5>
+              <p class="card-text">2000원</p>
+              <a href="main?cmd=detail&pno=1" class="btn btn-primary" id="selectButton">보러가기</a>                     
             </div>
           </div></div>
        <div class="col"> <div class="card" style="width: 17rem;">
