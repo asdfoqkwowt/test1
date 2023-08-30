@@ -1,11 +1,7 @@
-* {
+ * {
     box-sizing: border-box;
-  }
-  
-  body {
-    padding: 1rem;
-  }
-  
+  } 
+
   .contain {
     max-width: 1200px;
     margin-left: auto;
@@ -30,7 +26,7 @@
   input,
   textarea,
   button {
-    width: 100%;
+    
     border: 1px solid #000;
   }
   

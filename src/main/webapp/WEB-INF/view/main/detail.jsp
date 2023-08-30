@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,12 +71,16 @@
 						<form action="">
 							<ul>
 								<li><label for="pname">제품명</label></li>
-								<li>${vo.pname }</li>
+								<li><input type="text" size="100" value="${vo.pname }" readonly></li>
 								<li>가격</li>
-								<li>${vo.price }</li>
+								<li>
+								<li>
+								<input type="text" value="<fmt:formatNumber type="currency" value="${vo.price }" />" readonly>
+								</li>								
 								<li>상세 설명</li>
-								<li>${vo.content }</li>				
-								
+								<li>
+								<textarea cols="80" rows="10" readonly>${vo.content }</textarea>
+								</li>			
 							</ul>
 						</form>
 					</div>
